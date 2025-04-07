@@ -85,6 +85,7 @@ DATABASES = {
         ssl_require=True
     )
 }
+
 DEBUG = os.getenv("RENDER", "") != "true"
 
 # Pour permettre les accès depuis Render
@@ -120,8 +121,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 

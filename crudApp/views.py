@@ -88,3 +88,9 @@ def generer_programme(request):
     buffer.seek(0)
     Tache.objects.all().delete()
     return HttpResponse(buffer.getvalue(), content_type="image/png")
+
+def initialiser_jours(request):
+    jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
+    for jour in jours:
+        JourSemaine.objects.get_or_create(nom=jour)
+    return HttpResponse("Jours de la semaine initialisés ! ✅")
