@@ -79,7 +79,11 @@ WSGI_APPLICATION = 'crudprojet.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-   'default': dj_database_url.config(default="postgresql://crud_u94t_user:gpeyYUboVYEZsaoL2S42KErsez4UVUzM@dpg-cvq4k51r0fns73ehbg0g-a/crud_u94t"),
+    'default': dj_database_url.config(
+        default="postgresql://crud_u94t_user:gpeyYUboVYEZsaoL2S42KErsez4UVUzM@dpg-cvq4k51r0fns73ehbg0g-a/crud_u94t",
+        conn_max_age=600,
+        ssl_require=True
+    )
 }
 
 DEBUG = os.getenv("RENDER", "") != "true"
