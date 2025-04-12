@@ -16,6 +16,7 @@ django.setup()
 
 # Exécuter les migrations à chaque démarrage
 from django.core.management import call_command
-call_command('migrate')
+call_command("makemigrations", interactive=False)
+call_command("migrate", interactive=False)
 
 application = get_wsgi_application()
